@@ -4,9 +4,9 @@
 >
 > 输入只有三样东西：当事人提供的 4 张聊天截图、2 封 GitHub 通知邮件的 `.eml` 原件，以及对 `casdoor/casdoor` 仓库的公开检索（git 历史、PR、issue、raw 文件）。文章的结构、措辞、结论均由模型生成；事实性内容逐条附链接，读者可自行复核。
 
-**对象**：`casdoor/casdoor`（Apache-2.0），核查时间 2026-11-17，仓库 HEAD `0256064a`。
-**当事人**：WindSpiritSR，2021、2025 两度向该项目提交代码的前 contributor；2026-11-16 被移出 Casdoor 与 Apache Casbin 两个 GitHub 组织（邮件原件见 [evidence/org-removal-emails.md](evidence/org-removal-emails.md)）。
-**许可**：CC BY-NC-SA 4.0（见 [LICENSE](LICENSE) 与文末"许可"一节）。
+- **对象**：`casdoor/casdoor`（Apache-2.0），核查时间 2026-11-17，仓库 HEAD `0256064a`。
+- **当事人**：WindSpiritSR，2021、2025 两度向该项目提交代码的前 contributor；2026-11-16 被移出 Casdoor 与 Apache Casbin 两个 GitHub 组织（邮件原件见 [evidence/org-removal-emails.md](evidence/org-removal-emails.md)）。
+- **许可**：CC BY-NC-SA 4.0（见 [LICENSE](LICENSE) 与文末"许可"一节）。
 
 ---
 
@@ -264,7 +264,9 @@ if affiliationMap != nil {
 2025-03-29，当事人提交 [PR #3689](https://github.com/casdoor/casdoor/pull/3689)（`improve: org edit form`），把它改成按字段订阅。PR 描述给出了实测数据：
 
 > "Before: 161.11 ms per keystrokes event"
+>
 > "After: 2.3 ms per keystrokes event"
+>
 > "The page functionality has not been fully tested. Please conduct internal functional testing first."
 
 项目负责人的反应（图 3）：
@@ -615,7 +617,7 @@ func onUpgradeOrder(order *edition.UpgradeOrder) {
 | 29 | 导航条目 44 → 53 | [`web-old/src/common/NavItemTree.js`](https://github.com/casdoor/casdoor/blob/master/web-old/src/common/NavItemTree.js)、[`web/src/lib/nav.ts`](https://github.com/casdoor/casdoor/blob/master/web/src/lib/nav.ts) |
 | 30 | 模型批量产出的速率证据 | 2026-11-10 的 36 个 commit（`git log --author="Yang Luo" --numstat`：639 文件 / 30,100 行；15:49–16:04 窗口 12 commit / 15,761 行） |
 | 31 | 仓库内的 Claude 署名与 `.claude` | [`54854556`](https://github.com/casdoor/casdoor/commit/54854556)、[`de30b934`](https://github.com/casdoor/casdoor/commit/de30b934)、[`84f289dd`](https://github.com/casdoor/casdoor/commit/84f289dd) |
-| 32 | #6077 作者非项目成员 | [#6077](https://github.com/casdoor/casdoor/issues/6077)（xyz327，uthor_association: NONE，仓库内无 commit） |
+| 32 | #6077 作者非项目成员 | [#6077](https://github.com/casdoor/casdoor/issues/6077)（`xyz327`，`author_association: NONE`，仓库内无 commit） |
 
 ---
 
