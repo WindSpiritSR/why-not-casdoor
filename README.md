@@ -11,6 +11,7 @@
 - **对象**：`casdoor/casdoor`（Apache-2.0），核查时间 2026-11-17，仓库 HEAD `0256064a`。
 - **当事人**：WindSpiritSR，2021、2025 两度向该项目提交代码的前 contributor；2026-11-16 被移出 Casdoor 与 Apache Casbin 两个 GitHub 组织（邮件原件见 [evidence/org-removal-emails.md](evidence/org-removal-emails.md)）。
 - **许可**：CC BY-NC-SA 4.0（见 [LICENSE](LICENSE) 与文末"许可"一节）。
+- **勘误**：见 [#1](https://github.com/WindSpiritSR/why-not-casdoor/issues/1)（勘误与讨论）。
 
 ---
 

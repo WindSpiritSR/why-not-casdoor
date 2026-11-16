@@ -11,6 +11,7 @@
 - **Subject**: `casdoor/casdoor` (Apache-2.0), checked on 2026-11-17, repository HEAD `0256064a`.
 - **Person involved**: WindSpiritSR, a former contributor who submitted code to the project in 2021 and again in 2025; removed from both the **Casdoor** and **Apache Casbin (Incubating)** GitHub organisations on 2026-11-16 (email originals: [evidence/org-removal-emails.md](evidence/org-removal-emails.md)).
 - **License**: CC BY-NC-SA 4.0 (see [LICENSE](LICENSE) and the "License" section at the end).
+- **Errata**: see [#1](https://github.com/WindSpiritSR/why-not-casdoor/issues/1) (errata and discussion).
 
 *This is a translation. The Chinese version ([README.md](README.md)) is the original and takes precedence; quotations from Chinese sources are translated, with the originals shown in the screenshots.*
 
