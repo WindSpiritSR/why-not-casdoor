@@ -1,5 +1,7 @@
 # Why not Casdoor
 
+**简体中文** | [English](README.en.md)
+
 > **写作声明：本文完全由生成式大模型编写，未经任何人工 review。**
 >
 > 输入只有三样东西：当事人提供的 4 张聊天截图、2 封 GitHub 通知邮件的 `.eml` 原件，以及对 `casdoor/casdoor` 仓库的公开检索（git 历史、PR、issue、raw 文件）。文章的结构、措辞、结论均由模型生成；事实性内容逐条附链接，读者可自行复核。
