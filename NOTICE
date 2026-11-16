@@ -1,0 +1,29 @@
+Why not Casdoor
+Copyright (c) 2026 WindSpiritSR
+
+This work is licensed under the Creative Commons
+Attribution-NonCommercial-ShareAlike 4.0 International License
+(CC BY-NC-SA 4.0). The full license text is in the LICENSE file.
+
+To view a copy of this license, visit:
+    https://creativecommons.org/licenses/by-nc-sa/4.0/
+
+--------------------------------------------------------------------------
+Scope and exceptions
+--------------------------------------------------------------------------
+
+1. This license applies to the article text (`why-not-casdoor.md`) and to
+   the original analysis, structure and wording created by the author.
+
+2. Quoted third-party material remains the property of its respective
+   authors and is included here for the purposes of commentary, criticism
+   and evidence only. This includes:
+     - the chat screenshots under `images/` (fig1-fig4), which contain
+       messages written by other people;
+     - the quoted messages reproduced in the article;
+     - the GitHub notification emails under `evidence/` (the `.eml` files
+       and their transcription).
+   This license does not grant any rights over that material.
+
+3. Code excerpts quoted from the `casdoor/casdoor` repository remain under
+   the Apache License 2.0, as stated in that repository.
