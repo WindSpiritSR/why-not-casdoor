@@ -23,7 +23,7 @@
 2. **Default-value semantics.** The organisation-level `navItems` means "empty = everything". "The user unchecked everything" and "never configured" are indistinguishable at the data layer. Re-checked on 2026-11-17: the logic is unchanged from two years ago (§1).
 3. **How it was commercialised.** A licensed instance reports its hostname, machine fingerprint, private IPs and user count to the vendor every hour; the same Ed25519 key signs both the license and the "upgrade order", so with `allowVendorUpgrade` enabled the vendor can make an instance replace its own binary (§6).
 4. **How it is produced.** On 2026-11-10 alone: 36 commits, 639 files, ~30k inserted lines; within 15 minutes (15:49–16:04) 12 commits and 15.8k lines, landing five enterprise subsystems. All of these went straight to master — no PR, no review. 44 commits are authored by `Copilot`; 0 security advisories (§2, §8).
-5. **Governance.** About 60% of 4,368 commits come from one person; only 293 of the 1,220 commits in 2026 carry a PR number; objections are closed as "discussed offline" (§9).
+5. **Governance.** About 60% of 4,368 commits come from one person; only 293 of the 1,220 commits in 2026 carry a PR number; objections are closed as "discussed offline"; removed from two GitHub organisations on 11-16 and from two community QQ groups on 11-20, with no reason given in either case; in-group records were recalled in bulk, after which the group was placed under a group-wide mute (§9).
 6. **This document does not oppose commercialisation — it argues that large open-source projects must get commercialisation right.** What it criticises is bundling foundational protocols, foundational authorisation and the security boundary into a license, and answering "how do we sustain this" with "then build your own" (§7).
 
 ---
@@ -531,9 +531,9 @@ One observation that runs against the stereotype: in this project, student PRs w
 
 Another structural fact: the maintainer's mode of participating in features is "write them myself" — product pages, payment pages, MCP/agent work are all his commits; his mode of participating in architecture is "not at all". One owner who is product manager, architect, reviewer, merger and the largest feature contributor means **no structural veto point exists**. That is not a capability problem; it is a structural problem, and the structure is his own choice.
 
-On personal technical ability: public sources credit him as the original author of Npcap (the historical README of nmap/npcap says "developed by Yang Luo under Google Summer of Code 2013 and 2015"; his GitHub bio reads "Nmap member. Original author of Nmap's Npcap, Casbin, Casdoor, OpenAgent"). This document criticises engineering and governance, not personal technical ability.
+On personal technical ability: public sources credit him as the original author of Npcap (the historical README of nmap/npcap says "developed by Yang Luo under Google Summer of Code 2013 and 2015"; his GitHub bio reads "Apache Casbin PPMC. Nmap member. Original author of Nmap's Npcap, Casbin, Casdoor, OpenAgent"). This document criticises engineering and governance, not personal technical ability.
 
-### 🚪 Removal from the organisations
+### 🚪 Removal from the organisations — and from the groups
 
 At 19:08 Beijing time on 2026-11-16, two GitHub notification emails arrived one second apart:
 
@@ -550,10 +550,40 @@ The documented timeline:
 | 11-10 | Commercial features (license, telemetry, remote upgrade) merged |
 | 11-16 19:08:38 | Removed from the Apache Casbin (Incubating) organisation |
 | 11-16 19:08:39 | Removed from the Casdoor organisation |
+| 11-20 19:07 | Removed from the "SSO单点登录Casdoor + OAuth" QQ group (operator shown as Jay, group owner) |
+| 11-20 19:08 | Removed from the "Casbin访问控制社区群" QQ group (same operator) |
 
 The group-chat argument in Figure 4 is timestamped 18:07–18:37 but the screenshot carries no date, so this document does not use it as causal evidence; what can be said is that during those days the questions raised in the public group were exactly about telemetry and remote upgrades, and the removal happened on the evening of 11-16. Two emails one second apart can only be a single operation — Casbin and Casdoor were created by the same author and share the same administrators.
 
-**Investigation finding.** A project maintainer's time should go into making the project more reliable, not into managing the entrances through which problems are raised. A project that answers security reports with automatic bans, architecture objections with "offline discussion", and commercialisation objections with "build your own" has in practice given up external correction; and an IAM with no external correction mechanism is not suitable for carrying enterprise identity.
+Four days later the same treatment reached the community groups. At 19:07 and 19:08 on 2026-11-20 the person's QQ account was removed from "SSO单点登录Casdoor + OAuth" and "Casbin访问控制社区群". The system notification names the operator as "Jay (LV100, group owner)" and **gives no reason**:
+
+![Figure 5: removed from the "SSO单点登录Casdoor + OAuth" group at 19:07 on 2026-11-20](images/fig5-qq-casdoor-group.jpg)
+
+![Figure 6: removed from the "Casbin访问控制社区群" group at 19:08 on 2026-11-20](images/fig6-qq-casbin-group.jpg)
+
+Four days separate the GitHub organisations (11-16) from the community groups (11-20). The method is identical: remove the person, state no reason. The first left two archivable notification emails; the second left only two QQ system messages — which is why the screenshots are archived here as well.
+
+The log from the evening of 11-16 holds another layer. Figure 7 was captured by another member of the group, because the person involved had already been removed from it and could not take the screenshot himself. Between 18:07 and 18:31 the group owner, Jay, recalled "member messages" one after another; the ten-plus entries visible in the screenshot refer to messages written by the person involved. The single "你撤回了一条消息" at 18:26 belongs to the member who took the screenshot, not to the person involved. The screenshot was taken at 21:10 that evening, and its footer reads "全员禁言中，仅群主和管理员可发言" (all members muted; only the owner and admins may speak).
+
+![Figure 7: the recall log and the group-wide mute, 11-16](images/fig7-qq-recalls-mute.jpg)
+
+What was recalled was the entirety of his messages in that group. What this document can independently confirm is still only the window the screenshot covers; what can be confirmed is that after that evening nothing of his remained in the group except rows of "撤回了一条消息".
+
+This was not the first time. Whenever he questioned the project's feasibility, security or performance in the group, the conversation would be redirected to "you don't want the open-source community to make money"; after a while every message would be recalled, as if nothing had happened — "as if the whole world were one giant git repository, and he could run `reset --hard` at any moment". This style — recalling what he does not like, moving anything embarrassing into private chat — has been normal since he first joined the community.
+
+This raises a question about roles. Apache Casbin is currently incubating (it entered incubation on 2026-02-07); the [official incubation status page](https://incubator.apache.org/projects/casbin.html) lists Yang Luo under **Committers**, and the mentors listed there are xuanwo, benjobs, hulk and jshao. His GitHub profile, however, describes him as "Apache Casbin PPMC" ([github.com/hsluoyz](https://github.com/hsluoyz)). The PPMC roster on Apache Whimsy requires a login, so "PPMC" is at present a publicly self-declared identity, cited here as such. What is documented is that he has long served as a GSoC / OSPP mentor (see above). Whether someone who answers questions about security and compliance in a user group with bulk recalls, a group-wide mute and member removals should continue to represent an incubating community as a mentor or PPMC member is a question that can be put directly to the Apache Community Development project. This document does not answer it on the ASF's behalf; it only notes that the question exists.
+
+A more practical suggestion: since the project already has an explicit commercial path (Cloud, commercial edition, enterprise edition), communication with users and customers should be handled by a dedicated Community Management role rather than improvised by the maintainer in a group chat. Commercialisation means somebody has to own "what happens after a user asks an uncomfortable question" — that is not an engineering problem, and it should not be a side job for the person writing the code.
+
+One last question is harder to answer. Public sources show that Yang Luo is a research assistant professor (助理研究员) and master's supervisor at Peking University's National Engineering Research Center for Software Engineering, and a jointly appointed teacher at PKU's School of Software and Microelectronics ([scholar.pku.edu.cn/yangluo](http://scholar.pku.edu.cn/yangluo/home)). A PhD who works at a national software-engineering research centre and supervises master's students, when faced with real engineering questions, answers with "uncheck all equals select all" compatibility logic, with "the change is too big, so we won't do it", and with removing the person asking from the group — **a software engineering PhD who does not understand software engineering**. 🤔
+
+Two questions follow. First, about Peking University's software-engineering PhD programme: if this is a qualifying output of that training system, what exactly does "engineering ability" mean within it? Second, about the professional conduct expected of a research assistant professor and master's supervisor at PKU's National Engineering Research Center for Software Engineering: if the person supervising students treats users who raise security and compliance questions in a public community this way, what does "supervisor" mean here?
+
+One person's behaviour cannot stand for a university; but a doctoral programme that names itself after software engineering might at least want to look at how its graduates reason and communicate in public communities.
+
+Deleting a record does not make the record stop existing — it only makes clearer who is afraid of being recorded.
+
+**Investigation finding.** A project maintainer's time should go into making the project more reliable, not into managing the entrances through which problems are raised. A project that answers security reports with automatic bans, architecture objections with "offline discussion", commercialisation objections with "build your own", and questions in its own community group by removing the person asking, has in practice given up external correction; and an IAM with no external correction mechanism is not suitable for carrying enterprise identity.
 
 ---
 
@@ -625,6 +655,8 @@ The question is **what you intend to put behind it**. If it fronts all of a comp
 | 30 | Throughput evidence for bulk model output | The 36 commits of 2026-11-10 (`git log --author="Yang Luo" --numstat`: 639 files / 30,100 lines; 12 commits / 15,761 lines in the 15:49–16:04 window) |
 | 31 | Claude attribution and `.claude` in the repo | [`54854556`](https://github.com/casdoor/casdoor/commit/54854556), [`de30b934`](https://github.com/casdoor/casdoor/commit/de30b934), [`84f289dd`](https://github.com/casdoor/casdoor/commit/84f289dd) |
 | 32 | #6077 author is not a project member | [#6077](https://github.com/casdoor/casdoor/issues/6077) (`xyz327`, `author_association: NONE`, no commits in the repo) |
+| 33 | Removed from two community QQ groups on 2026-11-20 | Figures 5, 6 (operator shown as Jay, group owner; no reason given) |
+| 34 | Bulk recalls and a group-wide mute on 11-16 | Figure 7 (captured by another group member; recall log 18:07–18:31; screenshot taken at 21:10 showing "全员禁言中，仅群主和管理员可发言") |
 
 ---
 
@@ -638,7 +670,7 @@ The question is **what you intend to put behind it**. If it fronts all of a comp
 
 **Where the materials live**
 
-- Screenshots: `images/fig1-navitem-migrate.jpg` … `images/fig4-group-chat.jpg`
+- Screenshots: `images/fig1-navitem-migrate.jpg` … `images/fig4-group-chat.jpg` (chat logs), `images/fig5-qq-casdoor-group.jpg` and `images/fig6-qq-casbin-group.jpg` (QQ group removal notices), `images/fig7-qq-recalls-mute.jpg` (recall log and group-wide mute)
 - Emails: `evidence/2026-11-16-github-removed-from-casdoor-org.eml`, `evidence/2026-11-16-github-removed-from-casbin-org.eml`, plus the transcription `evidence/org-removal-emails.md`
 
 **Limitations**
@@ -647,6 +679,8 @@ The question is **what you intend to put behind it**. If it fronts all of a comp
 - The group-chat screenshot carries no date; this document does not use it to establish causation, only to present what both sides said.
 - The judgement about "model-generated" rests on throughput, the AI attribution traces in the repository (Copilot authorship, Claude co-authorship, the `.claude` ignore entry) and the way commits were made; it cannot prove that any single commit was model-generated.
 - "Removal from the organisation" is based on the two GitHub notifications; GitHub does not publish a public member-change log.
+- Figures 5 and 6 are QQ system notices: they contain the operator and the time, but no reason. The document therefore states only when the removal happened and who is shown as the operator; it does not infer a motive.
+- Figure 7 was captured by another group member (the person involved had already been removed at the time); the "你撤回了一条消息" entry belongs to that member. The screenshot covers only 18:07–18:31, and the statement that the entirety of the person's messages was recalled comes from him and from the member who captured it; it could not be independently verified here.
 - This document is not legal advice; for specific commercial terms, the vendor's contract governs.
 
 ---
